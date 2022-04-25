@@ -1,4 +1,5 @@
 const delay = require('../utils/delay');
+const CustomError = require('../errors/customError');
 
 class LaunchesService {
   static async getRandomPicturesFromLaunches(launches) {
@@ -14,6 +15,8 @@ class LaunchesService {
         return acc;
       }, []));
     }
+
+    if (!flickrImagesLinks.length) throw new CustomError('Currently we don\'t have pictures for you', 404);
 
     // generate random link
     return flickrImagesLinks[Math.floor(Math.random() * flickrImagesLinks.length)];
