@@ -6,7 +6,7 @@ const hpp = require('hpp');
 const rateLimit = require('express-rate-limit');
 const indexRouter = require('./routes/index');
 const CustomError = require('./errors/customError');
-const mainErrorHander = require('./errors/error-handler');
+const mainErrorHandler = require('./errors/error-handler');
 
 const app = express();
 
@@ -25,6 +25,6 @@ app.use(logger('dev'));
 app.use('/', indexRouter);
 app.use((req, res, next) => next(new CustomError('Not Found', 404)));
 
-app.use(mainErrorHander);
+app.use(mainErrorHandler);
 
 module.exports = app;
