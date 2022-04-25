@@ -1,5 +1,6 @@
 const axios = require('axios');
 const CustomError = require('../errors/customError');
+const { getRandomPicturesFromLaunches } = require('../services/launches.service');
 
 class IndexController {
   static async getPicture(req, res, next) {
@@ -9,7 +10,7 @@ class IndexController {
       if (!launches.length) throw new CustomError('Currently we don\'t have pictures for you', 404);
 
       // generate random link
-      res.redirect();
+      res.redirect(await getRandomPicturesFromLaunches(launches));
     } catch (e) {
       console.log(e);
       next(e);

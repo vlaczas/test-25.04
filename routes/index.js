@@ -1,14 +1,9 @@
 const express = require('express');
+const { getPicture } = require('../controllers/index.controller');
 
 const router = express.Router();
 
 /* GET home page. */
-router.get('/', (req, res, next) => {
-  try {
-    res.sendStatus(200);
-  } catch (e) {
-    next(e);
-  }
-});
+router.get('/', getPicture);
 
 module.exports = router;
