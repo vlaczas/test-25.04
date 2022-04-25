@@ -1,0 +1,31 @@
+{
+  "name": "test-psykolog",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node ./server",
+    "dev": "nodemon ./server",
+    "test": "jest",
+    "test:e2e": "jest --config ./test/e2e.config.js"
+  },
+  "dependencies": {
+    "axios": "^0.26.1",
+    "debug": "~2.6.9",
+    "express": "~4.16.1",
+    "express-rate-limit": "^6.4.0",
+    "helmet": "^5.0.2",
+    "hpp": "^0.2.3",
+    "morgan": "~1.9.1"
+  },
+  "devDependencies": {
+    "eslint": "^8.14.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-jsx-a11y": "^6.5.1",
+    "eslint-plugin-react": "^7.29.4",
+    "eslint-plugin-react-hooks": "^4.4.0",
+    "jest": "^28.0.0",
+    "nodemon": "^2.0.15",
+    "supertest": "^6.2.2"
+  }
+}

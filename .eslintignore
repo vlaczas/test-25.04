@@ -1,0 +1,4 @@
+test
+__tests__
+__e2e-tests__
+*.config.js
