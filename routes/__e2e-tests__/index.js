@@ -1,9 +1,11 @@
 const request = require('../../test/main');
 
-describe('Route test', () => {
-  it('test', async () => {
+describe('Main route', () => {
+  it('Redirects to the image link', async () => {
     const response = await request.get('/');
+    console.log(response)
 
-    expect(response.status).toBe(200);
+    expect(response.status).toBe(302);
+    expect(response.header.location).toBeDefined();
   });
 });
